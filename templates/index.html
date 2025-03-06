@@ -4,20 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Filter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        input[type="file"], select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Apply Filters to Your Image</h1>
-    <form method="POST" enctype="multipart/form-data">
-        <label for="image">Upload Image:</label>
-        <input type="file" name="image" id="image" required><br><br>
-        <label for="filter">Choose a Filter:</label>
-        <select name="filter" id="filter">
-            <option value="grayscale">Grayscale</option>
-            <option value="blur">Blur</option>
-            <option value="edges">Edge Detection</option>
-            <option value="sharpen">Sharpen</option>
-        </select><br><br>
-        <button type="submit">Apply Filter</button>
-    </form>
+    <div class="container">
+        <h1>Apply Filters to Your Image</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" id="image" required>
+
+            <label for="filter">Choose a Filter:</label>
+            <select name="filter" id="filter">
+                <option value="grayscale">Grayscale</option>
+                <option value="blur">Blur</option>
+                <option value="edges">Edge Detection</option>
+                <option value="sharpen">Sharpen</option>
+            </select>
+
+            <button type="submit">Apply Filter</button>
+        </form>
+    </div>
 </body>
 </html>
